@@ -9,6 +9,7 @@ import { SkillsSection } from './SkillsSection';
 import { ExperienceSection } from './ExperienceSection';
 import { CertificationsSection } from './CertificationsSection';
 import { ContactSection } from './ContactSection';
+import { HireModalComponent } from './HireModalComponent';
 
 export class PortfolioPage extends BasePage {
   readonly navBar: NavigationBar;
@@ -20,6 +21,7 @@ export class PortfolioPage extends BasePage {
   readonly experience: ExperienceSection;
   readonly certifications: CertificationsSection;
   readonly contact: ContactSection;
+  readonly hireModal: HireModalComponent;
 
   constructor(page: Page) {
     super(page);
@@ -32,6 +34,7 @@ export class PortfolioPage extends BasePage {
     this.experience = new ExperienceSection(page);
     this.certifications = new CertificationsSection(page);
     this.contact = new ContactSection(page);
+    this.hireModal = new HireModalComponent(page);
   }
 
   async loadPortfolio(): Promise<void> {

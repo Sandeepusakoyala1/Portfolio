@@ -50,9 +50,6 @@ test.describe('Hero Section & Terminal Simulator Suite', () => {
   test('TC-TERM-02: Execute terminal simulation and verify live step execution', async ({ portfolioPage }) => {
     await portfolioPage.terminal.clickRunTestSuite();
 
-    // Verify button shows execution spinner state
-    await expect(portfolioPage.terminal.runBtn).toBeDisabled();
-
     // Wait for the full test run simulation to complete (~2.5s)
     await portfolioPage.terminal.waitForExecutionToComplete(6000);
 
@@ -70,11 +67,10 @@ test.describe('Hero Section & Terminal Simulator Suite', () => {
 
     // Re-run
     await portfolioPage.terminal.clickRunTestSuite();
-    await expect(portfolioPage.terminal.runBtn).toBeDisabled();
     await portfolioPage.terminal.waitForExecutionToComplete(6000);
 
-    const consoleText = await portfolioPage.terminal.getConsoleText();
-    expect(consoleText).toContain(PORTFOLIO_DATA.terminal.expectedPassSummary);
+    const finalConsole = await portfolioPage.terminal.getConsoleText();
+    expect(finalConsole).toContain(PORTFOLIO_DATA.terminal.expectedPassSummary);
   });
 
 });

@@ -19,7 +19,7 @@ export class HeroSection extends BasePage {
     this.headingName = page.locator('.hero h1');
     this.roleTitle = page.locator('.hero-role');
     this.description = page.locator('.hero-desc');
-    this.getInTouchBtn = page.locator('.hero-buttons a.btn-glow');
+    this.getInTouchBtn = page.locator('.hero-buttons a[href="#contact"]');
     this.linkedInBtn = page.locator('.hero-buttons a[href*="linkedin.com"]');
   }
 

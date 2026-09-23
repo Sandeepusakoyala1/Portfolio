@@ -936,6 +936,261 @@
       transform: translateY(-3px);
     }
 
+    /* Hire Me / Recruiter Hub Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 6, 14, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-box {
+      background: #0d1220;
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      border-radius: 18px;
+      max-width: 660px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(0, 240, 255, 0.15);
+      transform: scale(0.95);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .modal-backdrop.open .modal-box {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 1.8rem 2rem 1.2rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .modal-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--accent-emerald);
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+
+    .modal-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: #ef4444;
+      color: #fff;
+    }
+
+    .modal-body {
+      padding: 1.6rem 2rem 2rem;
+    }
+
+    .modal-channels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .channel-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: all 0.2s;
+    }
+
+    .channel-card:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    .channel-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .channel-info {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      flex-grow: 1;
+    }
+
+    .channel-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+
+    .channel-val {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .channel-action {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 0.3rem;
+      border-radius: 4px;
+      transition: color 0.2s;
+    }
+
+    .channel-action:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Form */
+    .hire-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(5, 8, 16, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .form-success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 10px;
+      padding: 1.2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-top: 1rem;
+    }
+
+    .success-icon {
+      color: var(--accent-emerald);
+      font-size: 1.3rem;
+      margin-top: 0.1rem;
+    }
+
+    .form-success h4 {
+      color: var(--accent-emerald);
+      font-size: 0.98rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .form-success p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
@@ -989,9 +1244,9 @@
         <li><a href="#certifications">Credentials</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-          <a href="mailto:Sandeep.usakoyala01@gmail.com?subject=Opportunity%20Discussion" class="nav-cta">
+          <button type="button" class="nav-cta hire-me-trigger" id="hire-me-btn" aria-haspopup="dialog" aria-controls="hire-modal">
             <i class="fa-solid fa-bolt"></i> Hire Me
-          </a>
+          </button>
         </li>
       </ul>
 
@@ -1010,6 +1265,9 @@
       <a href="#experience" class="mob-link">Experience</a>
       <a href="#certifications" class="mob-link">Credentials</a>
       <a href="#contact" class="mob-link">Contact</a>
+      <button type="button" class="btn btn-glow hire-me-trigger" style="justify-content: center; margin-top: 0.5rem;" aria-haspopup="dialog" aria-controls="hire-modal">
+        <i class="fa-solid fa-bolt"></i> Hire Me / Recruiter Hub
+      </button>
     </div>
   </header>
 
@@ -1031,7 +1289,10 @@
             5+ years designing scalable Playwright (TypeScript) & Selenium test frameworks, API automation suites, and integrating agentic workflows (Claude Code, Playwright MCP) across Clinical Trial RTSM platforms and high-traffic distributed apps.
           </p>
           <div class="hero-buttons">
-            <a href="#contact" class="btn btn-glow">
+            <button type="button" class="btn btn-glow hire-me-trigger" aria-haspopup="dialog" aria-controls="hire-modal">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i> Hire Me
+            </button>
+            <a href="#contact" class="btn btn-glass">
               <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Get In Touch
             </a>
             <a href="https://linkedin.com/in/sandeep-usakoyala-35b782236" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
@@ -1382,6 +1643,115 @@
     </div>
   </footer>
 
+  <!-- Hire Me / Recruiter Hub Modal -->
+  <div class="modal-backdrop" id="hire-modal" role="dialog" aria-modal="true" aria-labelledby="hire-modal-title" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <div class="modal-pill">
+            <span class="live-dot" aria-hidden="true"></span> Available for Senior SDET &amp; Architect Roles
+          </div>
+          <h3 id="hire-modal-title" class="modal-title">Let's Build Reliable Software</h3>
+          <p class="modal-subtitle">5+ years architecting Playwright &amp; Selenium frameworks, API suites &amp; AI agentic workflows.</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Quick Channels Row -->
+        <div class="modal-channels">
+          <div class="channel-card">
+            <div class="channel-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">Direct Email</span>
+              <span class="channel-val">Sandeep.usakoyala01@gmail.com</span>
+            </div>
+            <button type="button" class="copy-btn" data-copy="Sandeep.usakoyala01@gmail.com" title="Copy email" aria-label="Copy email">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.1);"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">Phone &amp; WhatsApp</span>
+              <span class="channel-val">+91 9908489215</span>
+            </div>
+            <button type="button" class="copy-btn" data-copy="+919908489215" title="Copy phone" aria-label="Copy phone">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-icon" style="color: #0077b5; background: rgba(0, 119, 181, 0.1);"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
+            <div class="channel-info">
+              <span class="channel-label">LinkedIn</span>
+              <span class="channel-val">Sandeep Usakoyala</span>
+            </div>
+            <a href="https://linkedin.com/in/sandeep-usakoyala-35b782236" target="_blank" rel="noopener noreferrer" class="channel-action" title="Visit LinkedIn profile" aria-label="Visit LinkedIn profile">
+              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Inquiry Form -->
+        <form class="hire-form" id="hire-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inquiry-name">Your Name / Recruiter *</label>
+              <input type="text" id="inquiry-name" required placeholder="e.g. Sarah Connor" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="inquiry-email">Your Work Email *</label>
+              <input type="email" id="inquiry-email" required placeholder="name@company.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="inquiry-company">Company / Organization</label>
+              <input type="text" id="inquiry-company" placeholder="e.g. HealthTech / Fintech Global" autocomplete="organization" />
+            </div>
+            <div class="form-group">
+              <label for="inquiry-role">Target Engagement</label>
+              <select id="inquiry-role">
+                <option value="Senior SDET (Playwright / TypeScript)">Senior SDET (Playwright / TypeScript)</option>
+                <option value="Test Automation Architect">Test Automation Architect</option>
+                <option value="Lead QA Engineer (API &amp; Web)">Lead QA Engineer (API &amp; Web)</option>
+                <option value="Contract / Immediate Need">Contract / Immediate Need</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inquiry-message">Role Details or Project Scope</label>
+            <textarea id="inquiry-message" rows="3" placeholder="Tell me about the tech stack, team scale, or what challenges you're tackling..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-glow" id="inquiry-submit">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Direct Inquiry
+            </button>
+            <button type="button" class="btn btn-glass" id="inquiry-copy-summary">
+              <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Message Summary
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Message Banner -->
+        <div class="form-success" id="form-success" style="display: none;">
+          <div class="success-icon"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></div>
+          <div>
+            <h4>Inquiry Prepared &amp; Copied!</h4>
+            <p>Your email client was triggered with the pre-filled details, and the full summary was copied to your clipboard so you can paste it directly into email, Slack, or LinkedIn.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Floating Back to Top Button -->
   <button class="back-to-top" id="back-to-top" aria-label="Scroll back to top">
     <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
@@ -1638,18 +2008,47 @@
       }, 2500);
     }
 
+    function fallbackCopy(text, successMsg) {
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        textArea.style.top = '0';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        if (successful) {
+          showToast(successMsg || ('Copied to clipboard: ' + text));
+        } else {
+          showToast('Failed to copy');
+        }
+      } catch (err) {
+        showToast('Failed to copy');
+      }
+    }
+
+    function copyText(text, successMsg) {
+      if (!text) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg || ('Copied to clipboard: ' + text));
+        }).catch(() => {
+          fallbackCopy(text, successMsg);
+        });
+      } else {
+        fallbackCopy(text, successMsg);
+      }
+    }
+
     document.querySelectorAll('.copy-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
         const textToCopy = btn.getAttribute('data-copy');
-        if (textToCopy && navigator.clipboard) {
-          navigator.clipboard.writeText(textToCopy).then(() => {
-            showToast('Copied to clipboard: ' + textToCopy);
-          }).catch(() => {
-            showToast('Failed to copy');
-          });
-        }
+        copyText(textToCopy);
       });
     });
 
@@ -1666,6 +2065,110 @@
 
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    // 7. Hire Me / Recruiter Hub Modal Logic
+    const hireModal = document.getElementById('hire-modal');
+    const modalCloseBtn = document.getElementById('modal-close');
+    const hireTriggers = document.querySelectorAll('.hire-me-trigger');
+    const hireForm = document.getElementById('hire-form');
+    const formSuccess = document.getElementById('form-success');
+    const copySummaryBtn = document.getElementById('inquiry-copy-summary');
+    let lastFocusedElement = null;
+
+    function openHireModal() {
+      if (!hireModal) return;
+      lastFocusedElement = document.activeElement;
+      hireModal.classList.add('open');
+      hireModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      const firstInput = document.getElementById('inquiry-name');
+      if (firstInput) firstInput.focus();
+    }
+
+    function closeHireModal() {
+      if (!hireModal) return;
+      hireModal.classList.remove('open');
+      hireModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus();
+      }
+    }
+
+    hireTriggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // If mobile drawer is open, close it
+        if (typeof mobileDrawer !== 'undefined' && mobileDrawer && mobileDrawer.classList.contains('open')) {
+          mobileDrawer.classList.remove('open');
+          if (mobileToggle) mobileToggle.setAttribute('aria-expanded', 'false');
+          if (menuIcon) {
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
+          }
+        }
+        openHireModal();
+      });
+    });
+
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeHireModal);
+    }
+
+    if (hireModal) {
+      hireModal.addEventListener('click', (e) => {
+        if (e.target === hireModal) {
+          closeHireModal();
+        }
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && hireModal && hireModal.classList.contains('open')) {
+        closeHireModal();
+      }
+    });
+
+    function getInquirySummary() {
+      const name = document.getElementById('inquiry-name')?.value.trim() || 'Hiring Manager';
+      const email = document.getElementById('inquiry-email')?.value.trim() || 'N/A';
+      const company = document.getElementById('inquiry-company')?.value.trim() || 'N/A';
+      const role = document.getElementById('inquiry-role')?.value || 'Senior SDET';
+      const message = document.getElementById('inquiry-message')?.value.trim() || 'Excited to discuss QA & Automation Architect opportunities!';
+
+      return {
+        subject: `[Role Opportunity] ${role} - ${company !== 'N/A' ? company : name}`,
+        body: `Hi Sandeep,\n\nI came across your portfolio and would like to discuss an opportunity.\n\nRole: ${role}\nCompany: ${company}\nFrom: ${name} (${email})\n\nDetails:\n${message}\n\nBest regards,\n${name}`
+      };
+    }
+
+    if (hireForm) {
+      hireForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inquiry = getInquirySummary();
+        const mailtoUrl = `mailto:Sandeep.usakoyala01@gmail.com?subject=${encodeURIComponent(inquiry.subject)}&body=${encodeURIComponent(inquiry.body)}`;
+
+        copyText(inquiry.body, 'Inquiry generated & summary copied to clipboard!');
+
+        if (formSuccess) formSuccess.style.display = 'flex';
+
+        // Trigger mail client safely
+        const tempLink = document.createElement('a');
+        tempLink.href = mailtoUrl;
+        tempLink.target = '_blank';
+        tempLink.rel = 'noopener noreferrer';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        tempLink.remove();
+      });
+    }
+
+    if (copySummaryBtn) {
+      copySummaryBtn.addEventListener('click', () => {
+        const inquiry = getInquirySummary();
+        copyText(inquiry.body, 'Message summary copied to clipboard!');
       });
     }
   </script>

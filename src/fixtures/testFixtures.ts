@@ -12,7 +12,12 @@ export const test = base.extend<TestFixtures>({
     const listener = new ConsoleListener(page);
     await use(listener);
   },
-  portfolioPage: async ({ page }, use) => {
+  portfolioPage: async ({ page, context }, use) => {
+    try {
+      await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    } catch {
+      // Permission API may not be supported on all browser engines
+    }
     const portfolioPage = new PortfolioPage(page);
     await portfolioPage.loadPortfolio();
     await use(portfolioPage);
