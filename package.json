@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-e2e-playwright",
+  "version": "1.0.0",
+  "description": "End-to-end testing suite for Sandeep Usakoyala portfolio using Playwright and Page Object Model (POM)",
+  "scripts": {
+    "dev": "node server.js",
+    "test": "playwright test",
+    "test:live": "playwright test --config=playwright.live.config.ts",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report"
+  },
+  "keywords": ["playwright", "testing", "portfolio", "sdet", "automation", "pom"],
+  "author": "Sandeep Usakoyala",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
